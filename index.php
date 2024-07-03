@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <title>The chance</title>
+    <title>Plan</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <style>
         .btn:hover{
@@ -40,8 +40,8 @@
             </div>
             <div class="list">
                 <ul>
-                    <li><i class="material-icons green-text text-lighten-1 center-align">featured_play_list</i> Access to basic features</li>
-                    <li><i class="material-icons green-text text-lighten-1 center-align">help_center</i> Community support</li>
+                    <li><i class="material-icons blue-text text-accent-1">featured_play_list</i> Access to basic features</li>
+                    <li><i class="material-icons blue-text text-accent-1">help_center</i> Community support</li>
                     <li><i class="material-icons grey-text">cloud_off</i> Limited storage space</li>
                     <li><i class="material-icons grey-text">featured_video</i> Ads displayed within the app</li>
                 </ul>
@@ -57,10 +57,10 @@
             </div>
             <div class="list">
                 <ul>
-                    <li><i class="material-icons green-text text-lighten-1">featured_play_list</i> Access to all basic and advanced features</li>
-                    <li><i class="material-icons green-text text-lighten-1">cloud_done</i> Increased storage space</li>
-                    <li><i class="material-icons green-text text-lighten-1">live_help</i> Priority customer support</li>
-                    <li><i class="material-icons green-text text-lighten-1">featured_video</i> Ad-free experience</li>
+                    <li><i class="material-icons blue-text text-accent-1 ">featured_play_list</i> Access to all basic and advanced features</li>
+                    <li><i class="material-icons blue-text text-accent-1 ">cloud_done</i> Increased storage space</li>
+                    <li><i class="material-icons blue-text text-accent-1 ">live_help</i> Priority customer support</li>
+                    <li><i class="material-icons blue-text text-accent-1 ">featured_video</i> Ad-free experience</li>
                 </ul>
             </div>
             <div class="btn-container">
@@ -74,10 +74,10 @@
             </div>
             <div class="list">
                 <ul>
-                    <li><i class="material-icons green-text text-lighten-1">featured_play_list</i> All Pro Plan features included</li>
-                    <li><i class="material-icons green-text text-lighten-1">cloud_done</i> Unlimited storage space</li>
-                    <li><i class="material-icons green-text text-lighten-1">support_agent</i> Personalized customer support</li>
-                    <li><i class="material-icons green-text text-lighten-1">tips_and_updates</i> Exclusive access to new features and updates</li>
+                    <li><i class="material-icons blue-text text-accent-1">featured_play_list</i> All Pro Plan features included</li>
+                    <li><i class="material-icons blue-text text-accent-1">cloud_done</i> Unlimited storage space</li>
+                    <li><i class="material-icons blue-text text-accent-1">support_agent</i> Personalized customer support</li>
+                    <li><i class="material-icons deep-purple-text text-lighten-3">tips_and_updates</i> Exclusive access to new features and updates</li>
                 </ul>
             </div>
             <div class="btn-container">
