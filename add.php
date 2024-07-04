@@ -2,31 +2,42 @@
     if (isset($_POST['submit'])) {
         
         //check name
-        if(empty($POST['name'])) {
+        if(empty($_POST['name'])) {
             echo 'A name is required <br />';
         } else {
-            echo "Name: " . htmlspecialchars($_POST['name']) . "<br>";
+            $name = $_POST['name'];
+            if(!preg_match('/^[a-zA-Z\s]+$/', $name)) {
+                echo 'Name must be Latin script and spaces only';
+            }
+            // echo "Name: " . htmlspecialchars($_POST['name']) . "<br>";
         }
 
         // check email
-        if(empty($POST['email'])) {
+        if(empty($_POST['email'])) {
             echo 'An email is required <br />';
         } else {
-            echo "Email: " . htmlspecialchars($_POST['email']) . "<br>";
+            $email = $_POST['email'];
+            if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+                echo 'email must be a valid email addresss';
+            }
         }
 
         //check phone number
-        if(empty($POST['email'])) {
+        if(empty($_POST['phone'])) {
             echo 'A phone number is required <br />';
         } else {
-            echo "Phone number: " . htmlspecialchars($_POST['phone']) . "<br>";
+            $phone = $_POST['phone'];
+            // if(!preg_match('^(\+?\d{1,3}[-.\s]?)?(\(?\d{3}\)?[-.\s]?)?[\d\s.-]{7,}$/',$phone)) {
+            if(!preg_match('/^[0-9]{7,}$/',$phone)) {
+                echo 'Invalid phone number <br />'; 
+            }
         }
 
         //check city
-        if(empty($POST['phone'])) {
+        if(empty($_POST['phone'])) {
             echo 'A city is required <br />';
         } else {
-            echo "City: " . htmlspecialchars($_POST['city']) . "<br>";
+            // echo "City: " . htmlspecialchars($_POST['city']) . "<br>";
         }
     } //end of POST check
 ?>
@@ -52,7 +63,7 @@
             <label>Your Name:</label>
             <input type="text" name="name">
             <label>Your Email:</label>
-            <input type="email" name="email">
+            <input type="text" name="email">
             <label>Phone Number</label>
             <input type="tel" name="phone">
             <label>Your City</label>
