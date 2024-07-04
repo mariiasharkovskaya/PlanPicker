@@ -15,12 +15,14 @@
             color: white;
         }
         .list{
-            height: 200px;
-            padding:0 20%;
+            height: 150px;
+            padding:0 10%;
+            /* margin-bottom: 20px; */
         }
         .btn-container {
             display: flex;
             justify-content: center;
+            margin-bottom: 30px;
         }
         .row{
             margin-top: 50px;
@@ -34,7 +36,7 @@
         <h5 h5 class="center-align"><b>Billing and subsription</b></h5>
     </div>
     <div class="row">
-        <div class="col s4 planFree">
+        <div class="col m4 s12 planFree">
             <div class="plan_name">
                 <h6 class="center-align grey-text text-darken-4"><b>FREE</b></h6>
             </div>
@@ -51,7 +53,7 @@
             </div>
         </div>
 
-        <div class="col s4 planPro">
+        <div class="col m4 s12 planPro">
             <div class="plan_name">
                 <h6 class="center-align grey-text text-darken-4"><b>PRO</b></h6>
             </div>
@@ -68,7 +70,7 @@
             </div>
         </div>
 
-        <div class="col s4 planPremium">
+        <div class="col m4 s12 planPremium">
             <div class="plan_name">
                 <h6 class="center-align grey-text text-darken-4"><b>PREMIUM</b></h6>
             </div>
