@@ -1,11 +1,34 @@
 <?php
     if (isset($_POST['submit'])) {
-        echo "<pre>";
-        print_r($_POST); // Отображение содержимого массива $_GET
-        echo "</pre>";
-        echo "Email: " . $_POST['email'] . "<br>";
-        echo "City: " . $_POST['city'] . "<br>";
-    }
+        
+        //check name
+        if(empty($POST['name'])) {
+            echo 'A name is required <br />';
+        } else {
+            echo "Name: " . htmlspecialchars($_POST['name']) . "<br>";
+        }
+
+        // check email
+        if(empty($POST['email'])) {
+            echo 'An email is required <br />';
+        } else {
+            echo "Email: " . htmlspecialchars($_POST['email']) . "<br>";
+        }
+
+        //check phone number
+        if(empty($POST['email'])) {
+            echo 'A phone number is required <br />';
+        } else {
+            echo "Phone number: " . htmlspecialchars($_POST['phone']) . "<br>";
+        }
+
+        //check city
+        if(empty($POST['phone'])) {
+            echo 'A city is required <br />';
+        } else {
+            echo "City: " . htmlspecialchars($_POST['city']) . "<br>";
+        }
+    } //end of POST check
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,17 +64,7 @@
                 <option value="Dnipro">
                 <option value="Lviv">
             </datalist>
-            <!-- <div class="input-field">
-                <select>
-                    <option value="" disabled selected>Choose your option</option>
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                    <option value="3">Option 3</option>
-                    <option value="4">Option 4</option>
-                </select>
-            </div> -->
             <div class="center">
-                <!-- <input type="submit" name="submit" value="submit" class="btn purple lighten-3"> -->
                 <input type="submit" name="submit" value="submit" class="btn blue accent-1">
             </div>
         </form>
