@@ -1,44 +1,49 @@
 <?php
+    $name = $email = $phone = $city = '';
+    $errors = array('name'=>'', 'email'=>'', 'phone'=>'', 'city'=>'');
+
     if (isset($_POST['submit'])) {
         
         //check name
         if(empty($_POST['name'])) {
-            echo 'A name is required <br />';
+            $errors['name'] = 'A name is required <br />';
         } else {
             $name = $_POST['name'];
             if(!preg_match('/^[a-zA-Z\s]+$/', $name)) {
-                echo 'Name must be Latin script and spaces only';
+                $errors['name'] = 'Name must be Latin script and spaces only';
             }
             // echo "Name: " . htmlspecialchars($_POST['name']) . "<br>";
         }
 
         // check email
         if(empty($_POST['email'])) {
-            echo 'An email is required <br />';
+            $errors['email'] = 'An email is required <br />';
         } else {
             $email = $_POST['email'];
             if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-                echo 'email must be a valid email addresss';
+                $errors['email'] = 'email must be a valid email addresss';
             }
         }
 
         //check phone number
         if(empty($_POST['phone'])) {
-            echo 'A phone number is required <br />';
+            $errors['phone'] = 'A phone number is required <br />';
         } else {
             $phone = $_POST['phone'];
             // if(!preg_match('^(\+?\d{1,3}[-.\s]?)?(\(?\d{3}\)?[-.\s]?)?[\d\s.-]{7,}$/',$phone)) {
-            if(!preg_match('/^[0-9]{7,}$/',$phone)) {
-                echo 'Invalid phone number <br />'; 
+            if(!preg_match('/^[0-9]{7,}$/', $phone)) {
+                $errors['phone'] = 'Invalid phone number <br />'; 
             }
         }
 
         //check city
-        if(empty($_POST['phone'])) {
-            echo 'A city is required <br />';
-        } else {
+        if(empty($_POST['city'])) {
+            $errors['city'] = 'A city is required <br />';
+        } 
+        else {
+            $city = $_POST['city'];
             // echo "City: " . htmlspecialchars($_POST['city']) . "<br>";
-        }
+         }
     } //end of POST check
 ?>
 <!DOCTYPE html>
@@ -61,13 +66,17 @@
         <h4 class="center grey-text text-darken-2">Subscription</h4>
         <form action="add.php" class="grey lighten-3" method="POST">
             <label>Your Name:</label>
-            <input type="text" name="name">
+            <input type="text" name="name" value="<?php echo $name ?>">
+            <div class="red-text"><?php echo $errors['name']; ?></div>
             <label>Your Email:</label>
-            <input type="text" name="email">
+            <input type="text" name="email" value="<?php echo $email ?>">
+            <div class="red-text"><?php echo $errors['email']; ?></div>
             <label>Phone Number</label>
-            <input type="tel" name="phone">
+            <input type="tel" name="phone" value="<?php echo $phone ?>">
+            <div class="red-text"><?php echo $errors['phone']; ?></div>
             <label>Your City</label>
-            <input list="cities" name="city">
+            <input list="cities" name="city" value="<?php echo $city ?>">
+            <div class="red-text"><?php echo $errors['city']; ?></div>
             <datalist id="cities">
                 <option value="Odesa">
                 <option value="Kyiv">
