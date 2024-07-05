@@ -30,6 +30,11 @@
             margin-right: 80px;
         }
     </style>
+    <script>
+        function redirectToIndex() {
+            window.location.href = 'add.php';
+        }
+    </script>
 </head>
 <body>
     <div>
@@ -49,13 +54,13 @@
                 </ul>
             </div>
             <div class="btn-container">
-                <div class="btn center-align btn-flat btn-bordered"> Activate </div>
+                <div class="btn center-align btn-flat btn-bordered" onclick="redirectToIndex()"> Activate </div>
             </div>
         </div>
 
         <div class="col m4 s12 planPro">
             <div class="plan_name">
-                <h6 class="center-align grey-text text-darken-4"><b>PRO</b></h6>
+                <h6 class="center-align grey-text text-darken-4" onclick="redirectToIndex()"><b>PRO</b></h6>
             </div>
             <div class="list">
                 <ul>
@@ -66,7 +71,7 @@
                 </ul>
             </div>
             <div class="btn-container">
-                <div class="btn center-align btn-flat btn-bordered"> Activate </div>
+                <div class="btn center-align btn-flat btn-bordered" onclick="redirectToIndex()"> Activate </div>
             </div>
         </div>
 
@@ -83,7 +88,7 @@
                 </ul>
             </div>
             <div class="btn-container">
-                <div class="btn center-align btn-flat btn-bordered"> Activate </div>
+                <div class="btn center-align btn-flat btn-bordered" onclick="redirectToIndex()"> Activate </div>
             </div>
         </div>
 </body>

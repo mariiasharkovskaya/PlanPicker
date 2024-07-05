@@ -44,6 +44,15 @@
             $city = $_POST['city'];
             // echo "City: " . htmlspecialchars($_POST['city']) . "<br>";
          }
+
+         // checking for errors and redirecting
+         if(array_filter($errors)) {
+            //echo 'errors in the form';
+         } else {
+            header('Location: index.php');
+            //echo 'form is valid';
+         }
+
     } //end of POST check
 ?>
 <!DOCTYPE html>
@@ -66,16 +75,16 @@
         <h4 class="center grey-text text-darken-2">Subscription</h4>
         <form action="add.php" class="grey lighten-3" method="POST">
             <label>Your Name:</label>
-            <input type="text" name="name" value="<?php echo $name ?>">
+            <input type="text" name="name" value="<?php echo htmlspecialchars($name) ?>">
             <div class="red-text"><?php echo $errors['name']; ?></div>
             <label>Your Email:</label>
-            <input type="text" name="email" value="<?php echo $email ?>">
+            <input type="text" name="email" value="<?php echo htmlspecialchars($email) ?>">
             <div class="red-text"><?php echo $errors['email']; ?></div>
             <label>Phone Number</label>
-            <input type="tel" name="phone" value="<?php echo $phone ?>">
+            <input type="tel" name="phone" value="<?php echo htmlspecialchars($phone) ?>">
             <div class="red-text"><?php echo $errors['phone']; ?></div>
             <label>Your City</label>
-            <input list="cities" name="city" value="<?php echo $city ?>">
+            <input list="cities" name="city" value="<?php echo htmlspecialchars($city) ?>">
             <div class="red-text"><?php echo $errors['city']; ?></div>
             <datalist id="cities">
                 <option value="Odesa">
