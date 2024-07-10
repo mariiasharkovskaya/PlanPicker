@@ -11,7 +11,7 @@
     // }
 
     // write query for all users
-    $sql = 'SELECT name, phone, email, city FROM users ORDER BY name';
+    $sql = 'SELECT id, name, phone, email, city FROM users ORDER BY name';
 
     // make query & get result
     $result = mysqli_query($conn, $sql);
@@ -134,7 +134,7 @@
                                 <div class="blue-grey-text text-lighten-5"><?php echo htmlspecialchars($user['city'])?></div>
                             </div>
                             <div class="card-action right-align">
-                                <a href="#" class="brand-text">more info</a>
+                                <a class="brand-text" href="details.php?id=<?php echo $user['id']; ?>">more info</a>
                             </div>
                         </div>
                     </div>
