@@ -1,4 +1,7 @@
 <?php
+
+    include('config/db_connect.php');
+
     $name = $email = $phone = $city = '';
     $errors = array('name'=>'', 'email'=>'', 'phone'=>'', 'city'=>'');
 
@@ -49,8 +52,21 @@
          if(array_filter($errors)) {
             //echo 'errors in the form';
          } else {
-            header('Location: index.php');
-            //echo 'form is valid';
+            $email = mysqli_real_escape_string($conn, $_POST['email']);
+            $name = mysqli_real_escape_string($conn, $_POST['name']);
+            $city = mysqli_real_escape_string($conn, $_POST['city']);
+            $phone = mysqli_real_escape_string($conn, $_POST['phone']);
+
+            // create sql
+            $sql = "INSERT INTO users(name, email, phone, city) VALUES('$name', '$email', '$phone', '$city')";
+
+            // save to db and check
+            if(mysqli_query($conn, $sql)){
+                //success
+                header('Location: index.php');
+            } else {
+                echo 'query error: ' . mysqli_error($conn);
+            }
          }
 
     } //end of POST check

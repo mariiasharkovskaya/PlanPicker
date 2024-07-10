@@ -1,12 +1,14 @@
 <?php
 
+    include ('config/db_connect.php');
+
     // connet to database
-    $conn = mysqli_connect('localhost', 'pet_user', 'lfybzadmin', 'pet');
+    // $conn = mysqli_connect('localhost', 'pet_user', 'lfybzadmin', 'pet');
 
     // check connection
-    if(!$conn){
-        echo 'Connection error: ' . mysqli_connect_error();
-    }
+    // if(!$conn){
+        // echo 'Connection error: ' . mysqli_connect_error();
+    // }
 
     // write query for all users
     $sql = 'SELECT name, phone, email, city FROM users ORDER BY name';
@@ -36,8 +38,12 @@
     <title>Plan</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <style>
+        /* body {
+            background-color: indigo lighten-4;
+        } */
         .btn:hover{
-            background-color: #b388ff;
+            background-color: #263238;
+            /* background-color: #b388ff; */
             color: white;
         }
         .list{
@@ -62,7 +68,7 @@
         }
     </script>
 </head>
-<body>
+<body class="grey lighten-5">
     <div>
         <h5 h5 class="center-align"><b>Billing and subsription</b></h5>
     </div>
@@ -121,11 +127,11 @@
         <div class="container">
             <div class="row">
                 <?php foreach($users as $user) { ?>
-                    <div class="col s6 m3">
-                        <div class="card z-depth-0">
+                    <div class="col s6 md3">
+                        <div class="card z-depth-0 blue-grey darken-4">
                             <div class="card-content center">
-                                <h6><?php echo htmlspecialchars($user['name'])?></h6>
-                                <div><?php echo htmlspecialchars($user['city'])?></div>
+                                <h6 class="blue-grey-text text-lighten-5"><?php echo htmlspecialchars($user['name'])?></h6>
+                                <div class="blue-grey-text text-lighten-5"><?php echo htmlspecialchars($user['city'])?></div>
                             </div>
                             <div class="card-action right-align">
                                 <a href="#" class="brand-text">more info</a>
