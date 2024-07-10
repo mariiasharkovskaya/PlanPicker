@@ -1,6 +1,11 @@
 <?php 
 
     include('config/db_connect.php');
+
+    if(isset($_POST['delete'])){
+        $id_to_delete - mysqli_real_escape_string($conn, $_POST['id_to_delete']);
+    }
+
     // check GET request id param
     if(isset($_GET['id'])){
         $id = mysqli_real_escape_string($conn, $_GET['id']);
@@ -34,7 +39,13 @@
             <p>Created by: <?php echo htmlspecialchars($user['email']); ?></p>
             <p>From <?php echo htmlspecialchars($user['city']); ?></p>
             <p><?php echo date($user['created_at']); ?></p>
-        <?php else: ?>
+
+             <!-- DELETE FROM -->
+             <form action="details.php" method="POST">
+                <input type="hidden" name="id_to_delete" value="<?php echo $user['id']?>">
+                <input type="submit" name="delete" value="Delete" class="btn brand z-depth-0">
+             </form> 
+             <?php else: ?>
             <h5>No such user exists</h5>
         <?php endif; ?>
     </div>
