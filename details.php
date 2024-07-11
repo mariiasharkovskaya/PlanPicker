@@ -3,7 +3,15 @@
     include('config/db_connect.php');
 
     if(isset($_POST['delete'])){
-        $id_to_delete - mysqli_real_escape_string($conn, $_POST['id_to_delete']);
+        $id_to_delete = mysqli_real_escape_string($conn, $_POST['id_to_delete']);
+        $sql = "DELETE FROM users WHERE id = $id_to_delete";
+        if(mysqli_query($conn, $sql)){
+            // success
+            header('Location: index.php');
+        } {
+            // failure
+            echo 'query error: ' . mysqli_error($conn);
+        }
     }
 
     // check GET request id param
