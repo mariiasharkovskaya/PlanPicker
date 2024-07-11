@@ -89,7 +89,7 @@
 <body>
     <section class="container">
         <h4 class="center grey-text text-darken-2">Subscription</h4>
-        <form action="add.php" class="grey lighten-3" method="POST">
+        <form action="<?php echo $_SERVER['PHP_SELF']?>" class="grey lighten-3" method="POST">
             <label>Your Name:</label>
             <input type="text" name="name" value="<?php echo htmlspecialchars($name) ?>">
             <div class="red-text"><?php echo $errors['name']; ?></div>
